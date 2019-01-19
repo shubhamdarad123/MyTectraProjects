@@ -56,7 +56,6 @@ public class Logistics implements CabLogistics {
 	@Override
 	public void registerCab(Cab cab) throws Exception {
 		cabs.addCab(cab);
-		System.out.println();
 	}
 
 }
