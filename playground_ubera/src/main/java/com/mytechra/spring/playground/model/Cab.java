@@ -1,13 +1,21 @@
 	package com.mytechra.spring.playground.model;
 
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.Range;
+
 public class Cab {
 
+	@NotNull(message = "Cab Num should not be null")
 	private String cabNo;
 	
+	@NotNull
 	private String type;
 	
+	@NotNull
 	private String location;
 	
+	@Range(min = 0 , max = 100)
 	private int pricingPerHour;
 
 	public String getCabNo() {
