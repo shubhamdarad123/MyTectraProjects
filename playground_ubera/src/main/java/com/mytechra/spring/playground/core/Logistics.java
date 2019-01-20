@@ -57,5 +57,8 @@ public class Logistics implements CabLogistics {
 	public void registerCab(Cab cab) throws Exception {
 		cabs.addCab(cab);
 	}
-
+	@Override
+	public List<Ride> getBookedRide(){
+		return this.ridesBooked;
+	}
 }

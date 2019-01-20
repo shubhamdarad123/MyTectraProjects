@@ -1,4 +1,4 @@
-package com.mytechra.spring.playground.model;
+	package com.mytechra.spring.playground.model;
 
 public class Cab {
 

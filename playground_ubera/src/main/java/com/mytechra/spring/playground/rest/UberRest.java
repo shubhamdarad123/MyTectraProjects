@@ -36,6 +36,10 @@ public class UberRest implements Ubera {
 		return "success";
 	} 
 	
-	
+	@GetMapping("/bookedride")
+	@Override
+	public List<Ride> getBookedRides() throws Exception {
+		return cabs.getBookedRide();
+	}
 
 }

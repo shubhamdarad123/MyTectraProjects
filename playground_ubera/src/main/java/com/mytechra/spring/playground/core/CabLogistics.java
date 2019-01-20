@@ -13,4 +13,6 @@ public interface CabLogistics {
 	
 	void registerCab(Cab cab)throws Exception;
 	
+	public List<Ride> getBookedRide() throws Exception;
+	
 }

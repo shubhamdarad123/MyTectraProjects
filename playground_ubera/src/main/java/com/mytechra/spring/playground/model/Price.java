@@ -16,9 +16,9 @@ public class Price {
 
 		private String desc;
 		
-//		public UnitCharge() {
-//			
-//		}
+		public UnitCharge() {
+			
+		}
 		
 		public UnitCharge(int amount, String type, String desc) {
 			super();
