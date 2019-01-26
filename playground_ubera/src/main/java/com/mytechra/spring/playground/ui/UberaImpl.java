@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 import com.mytechra.spring.playground.core.CabLogistics;
 import com.mytechra.spring.playground.model.Cab;
 import com.mytechra.spring.playground.model.Ride;
+import com.mytechra.spring.playground.rest.RestMessage;
 
 @Component
 public class UberaImpl implements Ubera {
@@ -52,7 +53,7 @@ public class UberaImpl implements Ubera {
 	}
 
 	@Override
-	public ResponseEntity<?> bookRide(BookRide ride) throws Exception {
+	public RestMessage<String> bookRide(BookRide ride) throws Exception {
 		/*cabs.bookRide(ride);
 		return "Success";*/
 		return null;

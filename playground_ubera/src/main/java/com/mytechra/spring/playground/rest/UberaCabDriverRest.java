@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.mytechra.spring.playground.core.CabLogistics;
 import com.mytechra.spring.playground.model.Cab;
+import com.mytechra.spring.playground.rest.RestMessage.Status;
 import com.mytechra.spring.playground.ui.UberaCabs;
 
 @RestController
@@ -19,22 +20,12 @@ public class UberaCabDriverRest implements UberaCabs {
 	@Autowired
 	private CabLogistics cabs;
 	
-	public static class RestError{
-		String msg;
-		
-		public String getMsg() {
-			return msg;
-		}
-		
-		
-	}
-
 
 	@PostMapping("/register")
 	@Override
-	public ResponseEntity<?> registerCab(@RequestBody @RequestPart("application/json") @Validated Cab cab) throws Exception {
+	public RestMessage<String> registerCab(@RequestBody @RequestPart("application/json") @Validated Cab cab) throws Exception {
 		cabs.registerCab(cab);
-		return new ResponseEntity<>("sucess",HttpStatus.OK);
+		return new RestMessage<String>(Status.SUCESSS, "Cab Reg succesfull");
 		/*RestError error = validate(cab);
 		if(error == null) {
 			cabs.registerCab(cab);
