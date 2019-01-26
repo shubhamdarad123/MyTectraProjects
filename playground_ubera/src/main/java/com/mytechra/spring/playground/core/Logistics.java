@@ -12,6 +12,8 @@ import com.mytechra.spring.playground.core.cabpool.CabPool;
 import com.mytechra.spring.playground.core.pricing.Pricing;
 import com.mytechra.spring.playground.model.Cab;
 import com.mytechra.spring.playground.model.Ride;
+import com.mytechra.spring.playground.search.SearchCritera;
+import com.mytechra.spring.playground.search.UberCriteria;
 
 //@Component
 public class Logistics implements CabLogistics {
@@ -34,13 +36,16 @@ public class Logistics implements CabLogistics {
 	private List<Ride> ridesBooked = new ArrayList<>();
 	
 	@Override
-	public List<Ride> getRides(String location) throws Exception {
+	public List<Ride> getRides(SearchCritera criteria) throws Exception {
 		System.out.println("Getting Rides....");
+		
+		UberCriteria criteriaS = criteria.getCriterias().get(0);
+		
 		List<Ride> rides = new ArrayList<>();
-		List<Cab> cabList = cabs.listCabs(location);
+		List<Cab> cabList = cabs.listCabs(criteriaS.getValue());
 		 for(Cab cab : cabList) {
 			Ride ride = new Ride();
-			ride.setRideId(cab.getCabNo() + '_' + location);
+			ride.setRideId(cab.getCabNo() + '_' + criteriaS.getValue());
 			ride.setCabDetails(cab);
 			ride.setPrice(pricing.price(cab));
 			rides.add(ride);

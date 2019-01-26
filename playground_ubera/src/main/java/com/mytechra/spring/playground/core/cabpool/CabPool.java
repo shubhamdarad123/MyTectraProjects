@@ -8,7 +8,7 @@ public interface CabPool {
 	
 	void addCab(Cab cab) throws Exception;
 	
-	List<Cab>  listCabs(String location) throws Exception;
+	List<Cab> listCabs(String location) throws Exception;
 	
 	void deleteCab(Cab cab) throws Exception;
 
