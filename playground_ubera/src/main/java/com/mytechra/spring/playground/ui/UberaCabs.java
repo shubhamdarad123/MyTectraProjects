@@ -9,4 +9,6 @@ import com.mytechra.spring.playground.rest.RestMessage;
 public interface UberaCabs {
 	
 	public RestMessage<String> registerCab(Cab cab) throws Exception;
+
+	RestMessage<String> deleteCab(Cab cab) throws Exception;
 }

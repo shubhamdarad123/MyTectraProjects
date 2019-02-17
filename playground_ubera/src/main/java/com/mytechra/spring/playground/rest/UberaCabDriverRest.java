@@ -3,6 +3,7 @@ package com.mytechra.spring.playground.rest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,8 +23,10 @@ public class UberaCabDriverRest implements UberaCabs {
 	
 
 	@PostMapping("/register")
+	@Secured("DRIVER")
 	@Override
 	public RestMessage<String> registerCab(@RequestBody @RequestPart("application/json") @Validated Cab cab) throws Exception {
+		System.out.println("Rest message started");
 		cabs.registerCab(cab);
 		return new RestMessage<String>(Status.SUCESSS, "Cab Reg succesfull");
 		/*RestError error = validate(cab);
@@ -36,7 +39,23 @@ public class UberaCabDriverRest implements UberaCabs {
 		
 	}
 
-
+	@PostMapping("/delete")
+	@Secured("DRIVER")
+	@Override
+	public RestMessage<String> deleteCab(@RequestBody @RequestPart("application/json") @Validated Cab cab) throws Exception {
+		System.out.println("Rest message started");
+		System.out.println(cab);
+		cabs.deleteCab(cab);
+		return new RestMessage<String>(Status.SUCESSS, "Cab del succesfull");
+		/*RestError error = validate(cab);
+		if(error == null) {
+			cabs.registerCab(cab);
+			return new ResponseEntity<>("sucess",HttpStatus.OK);
+		} else {
+			return new ResponseEntity<>(error,HttpStatus.OK);
+		}*/
+		
+	}
 
 	/*private RestError validate(Cab cab) {
 		if(cab.getCabNo() == null || cab.getCabNo().isEmpty()) {

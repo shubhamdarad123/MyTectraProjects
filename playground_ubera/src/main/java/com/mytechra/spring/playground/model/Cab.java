@@ -1,20 +1,39 @@
 	package com.mytechra.spring.playground.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Range;
 
+@Entity
+@Table(name = "cabs")
 public class Cab {
-
+	@Id
 	@NotNull(message = "Cab Num should not be null")
+	@Size(min = 3)
+	@Column(name = "cabNumber")
 	private String cabNo;
 	
-	@NotNull
+	@Override
+	public String toString() {
+		return "Cab [cabNo=" + cabNo + ", type=" + type + ", location=" + location + ", pricingPerHour="
+				+ pricingPerHour + "]";
+	}
+
+	@NotNull(message = "type cannot be null")
+	@Size(min = 3)
+	@Column(name = "tyoe")
 	private String type;
 	
-	@NotNull
+	@NotNull(message = "location cannot be null")
+	@Size(min = 3)
 	private String location;
-	
+
+	@NotNull(message = "location cannot be null")
 	@Range(min = 0 , max = 100)
 	private int pricingPerHour;
 

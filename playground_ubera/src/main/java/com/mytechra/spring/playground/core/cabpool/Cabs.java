@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Component;
 
 import com.mytechra.spring.playground.model.Cab;
+import com.mytechra.spring.playground.search.SearchCritera;
 
 @Component
 public class Cabs implements CabPool {
@@ -17,6 +18,11 @@ public class Cabs implements CabPool {
 	@Override
 	public void addCab(Cab cab) throws Exception {
 		cabs.add(cab);
+	}
+
+	public Cabs() {
+		System.out.println("cabs loaded");
+		// TODO Auto-generated constructor stub
 	}
 
 	@Override

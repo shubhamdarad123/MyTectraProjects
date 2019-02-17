@@ -7,12 +7,13 @@ import org.springframework.context.annotation.Lazy;
 
 import com.mytechra.spring.playground.core.Logistics;
 import com.mytechra.spring.playground.core.cabpool.Cabs;
+import com.mytechra.spring.playground.core.cabpool.CabsDB;
 import com.mytechra.spring.playground.core.pricing.Pricing;
 @Configuration
 public class Config {
 	
 	@Bean
-	public Logistics cabLG(Cabs pool , @Qualifier("lazy-surge")@Lazy Pricing pricing) {
+	public Logistics cabLG(CabsDB pool , @Qualifier("lazy-surge")@Lazy Pricing pricing) {
 		return new Logistics(pool, pricing);
 	}
 

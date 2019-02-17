@@ -13,7 +13,7 @@ public class SearchCritera {
 	private SearchCritera() {
 	}
 
-	public static SearchCritera build(String search) throw SCE {
+	public static SearchCritera build(String search) throws Exception {
 		SearchCritera critera = new SearchCritera();
 
 		String[] values = search.split(delim);

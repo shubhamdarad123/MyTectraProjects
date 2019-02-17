@@ -12,8 +12,19 @@ public interface CabLogistics {
 	
 	void bookRide(Ride ride)throws Exception;
 	
+	void blockRide(Ride ride)throws Exception;
+	
+	void unBlockRide(Ride ride)throws Exception;
+	
 	void registerCab(Cab cab)throws Exception;
 	
 	public List<Ride> getBookedRide() throws Exception;
-	
+	public List<Ride> getBlockedRide() throws Exception;
+
+	List<Ride> getRides(String location) throws Exception;
+
+	void deleteCab(Cab cab) throws Exception;
+
+
+
 }
