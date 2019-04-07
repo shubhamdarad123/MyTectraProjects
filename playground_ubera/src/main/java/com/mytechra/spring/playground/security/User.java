@@ -5,6 +5,8 @@ import java.util.Collections;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -29,16 +31,16 @@ public class User implements UserDetails {
 	
 	@Column(name = "password")
 	private String sPassWord;
-
 	public enum Role implements GrantedAuthority {
 		DRIVER, USER;
 
 		@Override
 		public String getAuthority() {
-			return this.name();
+			return "ROLE_"+this.name();
 		}
 	}
 
+	@Enumerated(EnumType.STRING)
 	@Column(name = "role")
 	private Role role;
 

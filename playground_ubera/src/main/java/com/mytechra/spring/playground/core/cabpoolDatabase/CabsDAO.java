@@ -47,5 +47,11 @@ public class CabsDAO implements ICabsDAO {
 		// TODO Auto-generated method stub
 		jdbcTemplate.update(DELETE_QUERY,cab.getCabNo(),cab.getType(),cab.getLocation(),cab.getPricingPerHour());
 	}
+
+	@Override
+	public List<Cab> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }

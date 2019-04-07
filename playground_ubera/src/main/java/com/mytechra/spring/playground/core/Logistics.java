@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 import com.mytechra.spring.playground.core.cabpool.CabPool;
@@ -15,23 +16,24 @@ import com.mytechra.spring.playground.model.Ride;
 import com.mytechra.spring.playground.search.SearchCritera;
 import com.mytechra.spring.playground.search.UberCriteria;
 
-//@Component
+@Component
 public class Logistics implements CabLogistics {
 
-/*	@Autowired*/
+	@Autowired
 	private CabPool cabs;
 	
-/*	@Autowired
-	@Qualifier("surge")*/
+	@Autowired
+	@Lazy
+	@Qualifier("lazy-surge")
 	private Pricing pricing;
 	
 	
 	//Constructor Autowiring, Recomanded
-	@Autowired
-	public Logistics(CabPool cabs ,@Qualifier("lazy-surge") @Lazy Pricing pricing ){
-		this.cabs = cabs;
-		this.pricing = pricing;
-	}
+//	@Autowired
+//	public Logistics(CabPool cabs ,@Qualifier("lazy-surge") @Lazy Pricing pricing ){
+//		this.cabs = cabs;
+//		this.pricing = pricing;
+//	}
 	
 	private List<Ride> ridesBooked = new ArrayList<>();
 	private List<Ride> ridesBlocked = new ArrayList<>();

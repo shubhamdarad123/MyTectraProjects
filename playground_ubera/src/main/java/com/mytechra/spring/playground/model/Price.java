@@ -64,4 +64,8 @@ public class Price {
 	public int totalPrice() {
 		return charges.stream().collect(Collectors.summingInt(charge -> charge.getAmount()));
 	}
+	
+	public int getTotalPrice() {
+		return totalPrice();
+	}
 }

@@ -1,5 +1,8 @@
 package com.mytechra.spring.playground.rest;
 
+import javax.annotation.security.PermitAll;
+import javax.annotation.security.RolesAllowed;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,7 +26,7 @@ public class UberaCabDriverRest implements UberaCabs {
 	
 
 	@PostMapping("/register")
-	@Secured("DRIVER")
+	@RolesAllowed("DRIVER")
 	@Override
 	public RestMessage<String> registerCab(@RequestBody @RequestPart("application/json") @Validated Cab cab) throws Exception {
 		System.out.println("Rest message started");
@@ -40,7 +43,7 @@ public class UberaCabDriverRest implements UberaCabs {
 	}
 
 	@PostMapping("/delete")
-	@Secured("DRIVER")
+	@RolesAllowed("DRIVER")
 	@Override
 	public RestMessage<String> deleteCab(@RequestBody @RequestPart("application/json") @Validated Cab cab) throws Exception {
 		System.out.println("Rest message started");

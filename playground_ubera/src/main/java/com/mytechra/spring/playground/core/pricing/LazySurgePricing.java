@@ -4,12 +4,13 @@ import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 import com.mytechra.spring.playground.model.Cab;
 import com.mytechra.spring.playground.model.Price;
 import com.mytechra.spring.playground.model.Price.UnitCharge;
-
+@Primary
 @Component
 @Qualifier("lazy-surge")
 @Lazy

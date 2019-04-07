@@ -10,7 +10,7 @@ import com.mytechra.spring.playground.core.cabpoolDatabase.ICabsDAO;
 import com.mytechra.spring.playground.model.Cab;
 
 @Component
-
+@Primary
 public class CabsDB implements CabPool{
 
 	@Autowired
@@ -44,6 +44,12 @@ public class CabsDB implements CabPool{
 		// TODO Auto-generated method stub
 		cabsDAO.deleteCab(cab);
 		
+	}
+
+	@Override
+	public List<Cab> listCabs() throws Exception {
+		// TODO Auto-generated method stub
+		return cabsDAO.findAll();
 	}
 
 }

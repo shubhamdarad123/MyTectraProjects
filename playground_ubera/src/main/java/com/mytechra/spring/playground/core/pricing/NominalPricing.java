@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import com.mytechra.spring.playground.model.Cab;
 import com.mytechra.spring.playground.model.Price;
 import com.mytechra.spring.playground.model.Price.UnitCharge;
-@Primary
+
 @Component
 public class NominalPricing  implements Pricing{
  

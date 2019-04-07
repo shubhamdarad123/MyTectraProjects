@@ -42,6 +42,14 @@ public class CabsDAOHibernate implements ICabsDAO {
 	}
 
 	@Override
+	public List<Cab> findAll() {
+		// HQL WAY
+		System.out.println("query started");
+		TypedQuery<Cab> query =  entityManager.createQuery("FROM Cab c", Cab.class);
+		System.out.println("query created");
+		return query.getResultList();
+	}
+	@Override
 	@Transactional(value = TxType.REQUIRED)
 	public void deleteCab(Cab cab) {
 		// TODO Auto-generated method stub

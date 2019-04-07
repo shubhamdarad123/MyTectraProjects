@@ -43,4 +43,10 @@ public class Cabs implements CabPool {
 		return cabs.stream().filter(cab -> location.equals(cab.getLocation())).collect(Collectors.toList());
 	}
 
+	@Override
+	public List<Cab> listCabs() throws Exception {
+		return cabs.stream().collect(Collectors.toList());
+
+	}
+
 }

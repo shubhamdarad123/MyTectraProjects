@@ -11,6 +11,8 @@ public interface CabPool {
 	
 	List<Cab> listCabs(String location ) throws Exception;
 	
+	List<Cab> listCabs() throws Exception;
+	
 	void deleteCab(Cab cab) throws Exception;
 
 }

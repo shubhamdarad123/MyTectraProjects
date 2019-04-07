@@ -65,7 +65,7 @@ public class UberRest implements Ubera {
 //	}
 
 	@GetMapping("/list-rides")
-	@Secured("USER")
+	@RolesAllowed("USER")
 	@Override
 	public List<Ride> getRides(@RequestParam("search") String search) throws Exception {
 		SearchCritera criteria = SearchCritera.build(search);
@@ -121,7 +121,7 @@ public class UberRest implements Ubera {
 	}
 
 	@GetMapping("/bookedride")
-	@Secured("USER")
+	@RolesAllowed("USER")
 	@Override
 	public List<Ride> getBookedRides() throws Exception {
 		return cabs.getBookedRide();

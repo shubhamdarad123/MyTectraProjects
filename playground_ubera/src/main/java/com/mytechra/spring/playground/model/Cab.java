@@ -16,13 +16,7 @@ public class Cab {
 	@NotNull(message = "Cab Num should not be null")
 	@Size(min = 3)
 	@Column(name = "cabNumber")
-	private String cabNo;
-	
-	@Override
-	public String toString() {
-		return "Cab [cabNo=" + cabNo + ", type=" + type + ", location=" + location + ", pricingPerHour="
-				+ pricingPerHour + "]";
-	}
+	private String cabNo;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 
 	@NotNull(message = "type cannot be null")
 	@Size(min = 3)
@@ -68,6 +62,11 @@ public class Cab {
 	public void setPricingPerHour(int pricingPerHour) {
 		this.pricingPerHour = pricingPerHour;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Cab [cabNo=" + cabNo + ", type=" + type + ", location=" + location + ", pricingPerHour="
+				+ pricingPerHour + "]";
+	}
 	
 }

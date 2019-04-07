@@ -9,6 +9,8 @@ public interface ICabsDAO {
 	void save(Cab cab);
 
 	List<Cab> findAll(String location);
+	
+	List<Cab> findAll();
 
 	void deleteCab(Cab cab);
 
